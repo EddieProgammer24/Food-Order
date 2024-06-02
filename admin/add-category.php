@@ -102,30 +102,38 @@
                 //Upload the Image
                 $image_name = $_FILES['image']['name'];
 
-                //AutoRename Our Image
-                //Get the Extension of our image
-                $ext = end(explode('.',$image_name));
-
-                //Rename the Image
-                $image_name = "Food_Category_".rand(000, 999).'.'.$ext;
-
-                $source_path = $_FILES['image']['tmp_name'];
-
-                $destination_path = "../images/category/".$image_name;
-
-                //Finally upload the Image
-                $upload = move_uploaded_file($source_path,$destination_path);
-
-                //Check whether the image is uploaded or not
-                if($upload==false)
+                //upload the image only if Image is selected
+                if($image_name != "")
                 {
-                    //Set Message
-                    $_SESSION['upload'] = "<div class='error'>Failed to Upload Image</div>";
-                    //Redirect
-                    header('location'.SITEURL.'/admin/add-category.php');
-                    //Stop the Process
-                    die();
-                }
+
+                
+
+                      //AutoRename Our Image
+                     //Get the Extension of our image
+                     $ext = end(explode('.',$image_name));
+
+                     //Rename the Image
+                      $image_name = "Food_Category_".rand(000, 999).'.'.$ext;
+
+                     $source_path = $_FILES['image']['tmp_name'];
+
+                    $destination_path = "../images/category/".$image_name;
+
+                     //Finally upload the Image
+                     $upload = move_uploaded_file($source_path,$destination_path);
+
+                    //Check whether the image is uploaded or not
+                     if($upload==false)
+                     {
+                     //Set Message
+                     $_SESSION['upload'] = "<div class='error'>Failed to Upload Image</div>";
+                     //Redirect
+                     header('location'.SITEURL.'/admin/add-category.php');
+                     //Stop the Process
+                     die();
+                    }
+
+              }
             }
             else
             {
