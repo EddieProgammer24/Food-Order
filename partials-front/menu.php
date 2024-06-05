@@ -31,7 +31,7 @@
                         <a href="<?php echo SITEURL;?>/categories.php">Categories</a>
                     </li>
                     <li>
-                        <a href="<?php echo SITEURL;?>foods.php">Foods</a>
+                        <a href="<?php echo SITEURL;?>/foods.php">Foods</a>
                     </li>
                     <li>
                         <a href="#">Contact</a>
